@@ -1,0 +1,348 @@
+1) Can abstract class have constructors in Java?
+   Abstract classes have constructors and those constructors are always invoked when a concrete subclass is instantiated.
+
+
+2) Can abstract class implements interface in Java? do they require to implement all methods?
+  The abstract class can implement the interface in java, and the need not require to implement all the methods of that interface since they are abstract.
+
+   
+3) Can abstract class be final in Java?
+   No the abstract class cannot be final because they may contain a mix of methods declared with or without an implementation, which needs to be overriden in the subclass. Also the abstract classes cannot be instantiated.
+
+
+4) Can abstract class have static methods in Java?
+    Yes the abstract class can have static methods in java, since abstact class can have a mixture of abstract and non-abstract method.
+
+
+5) Can you create instance of abstract class?
+    No we cannot create an instance of abstract class since it does not contain complete implementation. It acts as a base class for subclasses.
+
+
+6) Is it necessary for abstract class to have abstract method?
+    It is not necessary for abstract class to have abstract methods. The concept for abstract class is the it cannot be instanciated and need to be subclassed. The concept for abstract method is that it has to be defined in the subclass.Hence the two concepts are different. 
+ 
+
+7) Difference between abstract class and interface in Java?
+    Abstract class can have abstract and non-abstract methods. Abstract class doesn't support multiple inheritance. Abstract class can have final, non-final, static and notatic variables.Abstract class can provide the implementation of interface.	
+    Interface can have only abstract methods. Since Java 8, it can have default and static methods also.Interface supports multiple inheritance.Interface has only static and final variables.Interface can't provide the implementation of abstract class.
+
+8) When do you favor abstract class over interface?
+    An abstract class doesn't have to be completely abstract. You can define certain functions (and variables) that all subclasses will use as-is, and leave only certain methods to be implemented by the subclasses. An interface has the limitation that no functions can be defined.
+
+
+9) What is abstract method in Java?
+   An abstract method is a method that is declared without an implementation. It can be used in inheritance, where the subclasses define the abtstract methods.
+
+
+10)Can abstract class contains main method in Java ?
+   Yes, because main() is a concrete method and abstract class allows concrete methods.
+
+
+11) what is static block in java?
+   Static block is used for initializing the static variables.This block gets executed when the class is loaded in the memory. A class can have multiple Static blocks, which will execute in the same sequence in which they have been written into the program.
+
+
+
+12) What is the need of static block?
+   If a class has static members that require complex initialization, a static block is the tool to use. 
+
+
+13) Can we overload static methods in java?
+   Yes, we can overload static method in Java. In terms of method overloading static method are just like normal methods and in order to overload static method you need to provide another static method with same name but different method signature. Static overloaded method are resolved using Static Binding during compile time.
+
+
+14) Can we call super class static methods from sub class?
+   Yes we can call super class static methods from sub class.
+
+
+15)What is the difference between final and static keywords?
+   The static keyword  is applicable to a nested static class, variables, methods and blocks.Static variable can be    initialized any time. A static variable can be reinitialized whereas. A static method can access the static member of the class and can only be invoked by other static methods.  Static block is used to initialize the static variables. 
+
+   Final keyword is applicable to class methods and variables. A final variable must be initialized at the time of declaration. Once initialized a final variable can never be reinitialized. The final method can never be inherited by any class. Final keyword does not support any block.
+
+16) Write a note on covariant return type with example code.
+   The covariant return type specifies that the return type may vary in the same direction as the subclass.
+ Example Code:
+         class A{  
+A get(){return this;}  
+}  
+  
+class B1 extends A{  
+B1 get(){return this;}  
+void message(){System.out.println("welcome to covariant return type");}  
+  
+public static void main(String args[]){  
+new B1().get().message();  
+}  
+}  
+
+
+17) Write a note on Enum with example code.
+    The enum keyword is used to declare an enumeration, a distinct type that consists of a set of named constants called the enumerator list.
+   Usually it is best to define an enum directly within a namespace so that all classes in the namespace can access it with equal convenience. However, an enum can also be nested within a class or struct. 1
+    By default, the first enumerator has the value 0, and the value of each successive enumerator is increased by 1.
+   Example code :
+             enum Color
+{
+    RED, GREEN, BLUE;
+}
+ 
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Color c1 = Color.RED;
+        System.out.println(c1);
+    }
+}
+
+
+18) Write a note on use of super keyword and super() method.
+Super Keyword
+   The super keyword in java is a reference variable which is used to refer immediate parent class object. Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.
+Usage of super Keyword:
+1.Super can be used to refer immediate parent class instance variable.
+  We can use super keyword to access the data member or field of parent class. It is used if parent class and child class have same fields.
+2.Super can be used to invoke immediate parent class method.
+  The super keyword can also be used to invoke parent class method. It should be used if subclass contains the same method as parent class. In other words, it is used if method is overridden.
+Super() Method
+   Super() is used to call immediate parent. Super() can be used with instance members i.e., instance variables and instance methods. Super() can be used within constructor to call the constructor of parent class.
+
+
+19) Write a code to implement abstraction using interface.
+package trial;
+interface MyInterface
+{
+   public void method1();
+   public void method2();
+}
+
+public class Interex implements MyInterface {
+	
+	   public void method1()
+	   {
+		System.out.println("implementation of method1");
+	   }
+	   public void method2()
+	   {
+		System.out.println("implementation of method2");
+	   }
+	   public static void main(String arg[])
+	   {
+		MyInterface obj = new Interex();
+		obj.method1();
+		obj.method2();
+	   }
+	}
+
+
+
+20)Write a Java program to sort a numeric array and a string array.
+  package trial;
+import java.util.*;
+
+public class Sort {
+	
+	    public static void main(String[] args) 
+	    {
+	        int n, temp;
+	        Scanner s = new Scanner(System.in);
+	        System.out.print("Enter no. of elements you want in array:");
+	        n = s.nextInt();
+	        int a[] = new int[n];
+	        System.out.println("Enter all the elements:");
+	        for (int i = 0; i < n; i++) 
+	        {
+	            a[i] = s.nextInt();
+	        }
+	        String temp1;
+	        System.out.print("Enter number of names you want to enter:");
+	        n = s.nextInt();
+	        String names[] = new String[n+1];
+	        System.out.println("Enter all the names:");
+	        
+	        for(int i = 0 ; i <n ; i++)
+	        {
+	            names[i] = s.nextLine();
+	        }
+	        for (int i = 0; i < n; i++) 
+	        {
+	            for (int j = i + 1; j < n; j++) 
+	            {
+	                if (a[i] > a[j]) 
+	                {
+	                    temp = a[i];
+	                    a[i] = a[j];
+	                    a[j] = temp;
+	                }
+	            }
+	        }
+	        for (int i = 0; i <=n; i++) 
+	        {
+	            for (int j = i + 1; j < n; j++) 
+	            {
+	                if (names[i].compareTo(names[j])>0) 
+	                {
+	                    temp1 = names[i];
+	                    names[i] = names[j];
+	                    names[j] = temp1;
+	                }
+	            }
+	        }
+	        s.close();
+	        System.out.print("Sorted integers:");
+	        for (int i = 0; i < n; i++) 
+	        {
+	            System.out.print(a[i] + ",");
+	        }
+	        System.out.print(a[n - 1]);
+	        System.out.print("Names in Sorted Order:");
+	        for (int i = 0; i < n-1; i++) 
+	        {
+	            System.out.print(names[i] + ",");
+	        }
+	        System.out.print(names[n-1]);
+	    }
+	}
+
+
+21)Write a Java program to sum values of an array.
+  package trial;
+import java.util.Scanner;
+public class sumarr {
+	public static void main(String[] args)
+	{
+		int x[]= new int[5];
+		int i,sum=0;
+		System.out.println("enter the values of the array");
+		Scanner sc= new Scanner(System.in);
+		for(i=0;i<5;i++)
+		{
+			x[i]= sc.nextInt();
+			sum=sum+x[i];
+		}
+		sc.close();
+		System.out.println("the sum is");
+		System.out.print(sum);
+	}   
+
+}
+
+
+22)Write a Java program to remove a specific element from an array.
+import java.util.Scanner;
+public class Delete
+{
+    public static void main(String[] args) 
+    {
+        int n, x, flag = 1, loc = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < n; i++) 
+        {
+            a[i] = s.nextInt();
+        }
+        System.out.print("Enter the element you want to delete:");
+        x = s.nextInt();
+        for (int i = 0; i < n; i++) 
+        {
+            if(a[i] == x)
+            {
+                flag =1;
+                loc = i;
+                break;
+            }
+            else
+            {
+                flag = 0;
+            }
+        }
+        if(flag == 1)
+        {
+            for(int i = loc+1; i < n; i++)
+            {
+                a[i-1] = a[i];
+            }
+            System.out.print("After Deleting:");
+            for (int i = 0; i < n-2; i++) 
+            {
+                System.out.print(a[i]+",");
+            }
+            System.out.print(a[n-2]);
+        }
+        else
+        {
+            System.out.println("Element not found");
+        }
+    }
+}
+
+
+23)Write a Java program to reverse an array of integer values.
+package trial;
+
+import java.util.Scanner;
+
+public class Rev {
+	 public static void main(String[] args) {
+		 int n;
+	        Scanner sc=new Scanner(System.in);
+	        System.out.println("enter the no. of elements:");
+	        n=sc.nextInt();
+	        int numbers[] = new int[n];
+	        System.out.println("enter the values");
+	        for(int i=0;i<n;i++)
+	        {
+	        	numbers[i]= sc.nextInt();
+	        }
+	        sc.close();
+	        System.out.println("Array before reverse:");
+	        for (int i = 0; i < numbers.length; i++) {
+	            System.out.print(numbers[i] + " ");
+	        }
+	        for (int i = 0, j = numbers.length - 1; i < j; i++, j--) {
+	            int temp = numbers[i];
+	            numbers[i] = numbers[j];
+	            numbers[j] = temp;
+	        }
+	        System.out.println("\nArray after reverse:");
+	        for (int i = 0; i < numbers.length; i++) {
+	            System.out.print(numbers[i] + " ");
+	        }
+	    }
+	}
+
+
+24)Write a Java program to find the duplicate values of an array of integer values.
+package trial;
+import java.util.*;
+
+public class Cl {
+  public static void main(String[] args) 
+    {
+        int n;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the no. of elements:");
+        n=sc.nextInt();
+        int my_array[] = new int[n];
+        System.out.println("enter the values");
+        for(int i=0;i<n;i++)
+        {
+        	my_array[i]= sc.nextInt();
+        }
+        sc.close();
+        for (int i = 0; i < my_array.length-1; i++)
+        {
+            for (int j = i+1; j < my_array.length; j++)
+            {
+                if ((my_array[i] == my_array[j]) && (i != j))
+                {
+                    System.out.println("Duplicate Element : "+my_array[j]);
+                }
+            }
+        }
+    }
+}
