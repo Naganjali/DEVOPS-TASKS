@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#c").animate({
+            
+            
+            height: '470px',
+            width: '550px'
+        });
+    });
+	$("#ph").click(function(){
+    $("#p").toggle();
+});
+	
+	
+});
+</script> 
+</head>
+<body>
+
+
+
+
+<div class="container-fluid">
+<div style="background:gray;height:400px;width:50%; float:left"><img id="c" src="http://wiki.nurserylive.com/uploads/default/original/1X/94fb70d6d8375a0db0bf794d3182406800865967.jpg" style="height:300px;width:300px;position:absolute;" /></div>
+<div style="background:black;height:400px;width:50%; float:right"><p id="p" style="color:white;font-size:40px">Lotus (Nelumbo Nucifera Gaertn) is the National Flower of India. It is a sacred flower and occupies a unique position in the art and mythology of ancient India.</p></div>
+</div>
+
+
+<div class="row">
+<div class="col-lg-12" style="height:100px;background-color:white"></div>
+</div>
+
+
+<div class="row">
+<div style="height:150px" class="col-md-6"> <button class="btn btn-lg btn-success" style="margin-left:250px;margin-top:50px">Start Image Resize</button></div>
+<div style="height:150px" class="col-md-6"><button id="ph" class="btn btn-lg btn-success" style="margin-left:250px;margin-top:50px">Start Toggle Paragraph</button></div>
+</div>
+
+
+</body>
+</html>
